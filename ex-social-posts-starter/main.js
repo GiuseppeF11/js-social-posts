@@ -1,5 +1,3 @@
-console.log('Template html css js')
-
 const posts = [
     {
         "id": 1,
