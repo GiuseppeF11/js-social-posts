@@ -105,36 +105,20 @@ for (let i = 0; i < posts.length ; i++) {
 
 const likeButtons = document.querySelectorAll('.like-button');
 
+const favoritePosts = []
 for (let i = 0; i < likeButtons.length; i++){
     likeButtons[i].addEventListener('click', function(){
         this.classList.toggle('like-button--liked');
         if (this.classList.contains('like-button--liked')){
             posts[i].likes++;
-
+            favoritePosts.push(posts[i].id);
+            console.log('Post che mi piacciono:' + favoritePosts)
         }
         else {
             posts[i].likes--;
+            favoritePosts.pop(posts[i].id);
+            console.log('Post che mi piacciono:' + favoritePosts)
         }
         document.getElementById(`like-counter-${posts[i].id}`).innerHTML = posts[i].likes;
     });
 }
-
-
-
-/*     const postHeader = document.createElement('div').classList.add('post__header');
-    const postMeta = document.createElement('div').classList.add('post-meta');
-    const postMetaIcon = document.createElement('div').classList.add('post-meta__icon');
-    const postMetaData = document.createElement('div').classList.add('post-meta__data');
-    const postMetaAuthor = document.createElement('div').classList.add('post-meta__author');
-    const postMetaTime = document.createElement('div').classList.add('post-meta__time');
-    const postText = document.createElement('div').classList.add('post__text');
-    const postImage = document.createElement('div').classList.add('post__image');
-    const postFooter = document.createElement('div').classList.add('post__footer');
-    const likes = document.createElement('div').classList.add('likes','js-likes');
-    const likesCta = document.createElement('div').classList.add('likes__cta');
-    const likeButton = document.createElement('a').classList.add('like-button','js-like-button');
-    const likeButtoIcon = document.createElement('i').classList.add('like-button__icon', 'fas' ,'fa-thumbs-up');
-    const likeButtonLabel = document.createElement('span').classList.add('like-button__label');
-    const likesCounter = document.createElement('div').classList.add('likes__counter');
-    const jsLikesCounter = document.createElement('b').classList.add('js-likes-counter');
- */
