@@ -109,11 +109,17 @@ h1 {
     padding: 16px;
     border-radius: 8px;    
     text-decoration: none;
-    color: #404040;
+    color: #363636;
 }
 
-.like-button:not(.like-button--liked):hover {
-    background-color: #e3e3e3
+button {
+    border: none;
+    background-color: #e3e3e3;
+}
+
+.like-button:not(.like-button--liked):hover, 
+.like-button.like-button--liked:hover {
+    background-color:  #929292;
 }
 
 .like-button__label {
